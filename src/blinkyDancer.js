@@ -11,7 +11,7 @@ var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
   // this.oldStep = this.step;
 
 
-  // return blinkyDancer; // <-- see line 2.
+  // return sanic; // <-- see line 2.
 };
 
 //delegate prototype of MakeBlinkyDancer to MakeDancer

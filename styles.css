@@ -4,6 +4,8 @@ body, html{
 body{
   margin: 0px;
   background-color:#444;
+  background-image: url("dancers/dancefloor.jpg");
+  background-position: center;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +23,12 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
+  /* content: url("dancers/Sanic.gif"); */
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+.sanic{
+  content: url("dancers/Sanic.gif");
+  position: absolute;
 }
