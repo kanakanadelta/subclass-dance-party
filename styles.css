@@ -10,11 +10,27 @@ body{
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.title, .addDancerButton{
+
+a {
+  border:1.5px solid salmon;
+  background-color: grey;
+  border-radius: 7.5px;
+}
+.title, .addDancerButton, .addDancerButton2{
   padding:5px 12px;
   float:right;
 }
+
+.lineUp {
+  font-weight: bold;
+}
+
+#lineUp {
+  color: red;
+}
+
 .topbar{
   height:32px;
   background-color: #555;
@@ -23,12 +39,27 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  /* content: url("dancers/Sanic.gif"); */
-  border:10px solid red;
+  content: url("dancers/umaru.gif");
+  /* border:10px solid red; */
   border-radius:10px;
   position:absolute;
 }
 .sanic{
   content: url("dancers/Sanic.gif");
+  position:absolute;
+}
+.wick{
+  content: url("dancers/wick.gif");
+  /* border:10px solid red; */
+  /* border-radius:10px; */
   position: absolute;
+}
+.sanicRun{
+  content: url("dancers/walkdown/sanic3.gif");
+  position:absolute;
+}
+
+#discoBall {
+  margin: auto;
+  width: 15%;
 }

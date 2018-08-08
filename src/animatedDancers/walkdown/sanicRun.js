@@ -1,19 +1,23 @@
-var MakeSanic = function(top, left, timeBetweenSteps) {
+var MakeSanicRun = function(top, left, timeBetweenSteps) {
 
     MakeDancer.call(this, top, left, timeBetweenSteps);
-    this.$node.addClass('sanic');
+    this.$node.addClass('sanicRun');
   };
   
   //delegate prototype 
-  MakeSanic.prototype = Object.create(MakeDancer.prototype);
-  MakeSanic.prototype.constructor = MakeSanic;
+  MakeSanicRun.prototype = Object.create(MakeDancer.prototype);
+  MakeSanicRun.prototype.constructor = MakeSanicRun;
 
 
   // delegate prototypes for methods of constructor function
-  MakeSanic.prototype.step = function () {
+  MakeSanicRun.prototype.step = function () {
     MakeDancer.prototype.step.call(this);
     // toggle() is a jQuery method to show/hide the <span> tag.
     // See http://api.jquery.com/category/effects/ for this and
     // other effects you can use on a jQuery-wrapped html tag.
-    this.$node.toggle();
+    this.$node.hover('hover',function(){
+        $(this).animate({
+            top: '+=300px'
+        }, 2000);
+    });
   };

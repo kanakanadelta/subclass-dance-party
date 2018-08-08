@@ -15,10 +15,10 @@ $(document).ready(function() {
      * A new object of the given type will be created and added
      * to the stage.
      */
-    var dancerMakerFunctionName = $(this).data('dance-maker-function-name');
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
-    var dancerMakerFunction = window['MakeDancer'];
+    var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
 
@@ -28,6 +28,41 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer)
+  });
+
+  $('.addDancerButton2').on('click', function(event) {
+
+    var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
+
+    // get the maker function for the kind of dancer we're supposed to make
+    var dancerMakerFunction = window['MakeSanicRun'];
+
+  var sonicRun = new dancerMakerFunction(
+    //set a specific height for our sonic runner
+    $("body").height() - 800,
+    //set random placement within the width of the set height (horizontally)
+    $("body").width() * Math.random(),
+    Math.random() * 1000
+  );
+  $('body').append(sonicRun.$node);
+  window.dancers.push(sonicRun);
+  });  
+
+  $('#lineUp').on('click', function() {
+    console.log('i work');
+    //have a number, make it a string, and then concat % // top is being incremented to make space
+    for(let i = 0, top = 15; i < window.dancers.length; i++, top+=5) {
+      //select each dancer[i] give it a a new top
+      $(window.dancers[i].$node).animate({
+        left: '0%',
+        top: top+ '%'
+      }, 2000);
+
+    }
+    
   });
 });
+
+
 
